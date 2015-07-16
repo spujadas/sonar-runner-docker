@@ -1,0 +1,13 @@
+# Docker Compose YAML file for SonarQube Runner
+
+# build with:
+# $ sudo docker-compose build
+
+# start with:
+# $ sudo docker-compose up
+
+# after start, enter shell with:
+# $ sudo docker exec -it sonarunnerdocker_sonarrunner_1 bash
+
+sonarrunner:
+    build: .
