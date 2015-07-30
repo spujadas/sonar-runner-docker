@@ -41,7 +41,7 @@ Here it goes...
 	docker run --link sonarqubedocker_sonarqube_1:sonarqube \
 	  --entrypoint /opt/sonar-runner-2.4/bin/sonar-runner \
 	  -e SONAR_USER_HOME=/data/.sonar-cache \
-	  -v `pwd`:/data -u `id -u` sebp/sonar-runner \
+	  -v $(pwd):/data -u $(id -u) sebp/sonar-runner \
 	    -Dsonar.host.url=http://sonarqube:9000 \
 	    -Dsonar.jdbc.url=jdbc:h2:tcp://sonarqube/sonar \
 	    -Dsonar.jdbc.username=sonar \
@@ -55,7 +55,7 @@ Run the command below, adapting the `-Dsonar.* options` as needed, especially th
 
 	docker run --entrypoint /opt/sonar-runner-2.4/bin/sonar-runner \
 	  -e SONAR_USER_HOME=/data/.sonar-cache \
-	  -v `pwd`:/data -u `id -u` sebp/sonar-runner \
+	  -v $(pwd):/data -u $(id -u) sebp/sonar-runner \
 	    -Dsonar.host.url=http://sonarqube:9000 \
 	    -Dsonar.jdbc.url=jdbc:h2:tcp://sonarqube/sonar \
 	    -Dsonar.jdbc.username=sonar \
